@@ -1,0 +1,51 @@
+@use "../../assets/scss/colors.scss" as *;
+@use "../../assets/scss/common.scss" as *;
+
+.campaign-filter-section {
+  margin-bottom: 15px;
+
+  .campaign-filters {
+    padding: 10px;
+    border: 1px solid $border-grey;
+  }
+
+  .create-campaign-btn {
+    display: flex;
+    flex-direction: row-reverse;
+
+    a {
+      height: 35px;
+    }
+  }
+}
+
+.campaign-form {
+  font-size: 14px;
+
+  label {
+    font-weight: 600;
+  }
+
+  .alert-secondary {
+    background-color: $header-bg-grey;
+    border: none;
+    border-radius: 0;
+  }
+
+  .btn.asset-upload-btn {
+    z-index: 0;
+  }
+
+  .mandatory {
+    color: $red;
+    margin-right: 3px;
+    font-size: 15px;
+  }
+
+  .form-textfield {
+    width: 100%;
+    input {
+      font-size: 14px;
+    }
+  }
+}

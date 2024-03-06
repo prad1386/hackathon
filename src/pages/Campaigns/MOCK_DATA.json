@@ -1,0 +1,44 @@
+[
+  {
+    "campaignId": "7af2c071-9ee3-41b9-8318-6ad910a28edd",
+    "campaignName": "Windows Monthly Aug",
+    "technologyType": "windows",
+    "campaignStatus": "Active",
+    "manual": true,
+    "campaignDescription": "sLorem Ipsum",
+    "assetUrl": "123",
+    "emailDistribution": "abc",
+    "createdBy": "user1",
+    "createdDate": "2022-08-22T03:44:57.000Z",
+    "startDate": "2022-08-22T03:44:57.000Z",
+    "endDate": "2022-08-22T03:44:57.000Z"
+  },
+  {
+    "campaignId": "7c2bea2b-5065-40e8-840a-c0cfefcb6d43",
+    "campaignName": "Windows Monthly Sep",
+    "technologyType": "linux",
+    "campaignStatus": "Paused",
+    "manual": false,
+    "campaignDescription": "Lorem Ipsum",
+    "assetUrl": "345",
+    "emailDistribution": "def",
+    "createdBy": "user2",
+    "createdDate": "2022-08-22T03:44:57.000Z",
+    "startDate": "2022-08-22T03:44:57.000Z",
+    "endDate": "2022-08-22T03:44:57.000Z"
+  },
+  {
+    "campaignId": "7c2bea2b-5065-40e8-840a-c0cfefcb6d45",
+    "campaignName": "Windows Monthly nov",
+    "technologyType": "linux",
+    "campaignStatus": "Paused",
+    "manual": false,
+    "campaignDescription": "Lorem Ipsum 4",
+    "assetUrl": "345",
+    "emailDistribution": "def",
+    "createdBy": "user2",
+    "createdDate": "2022-08-22T03:44:57.000Z",
+    "startDate": "2022-08-22T03:44:57.000Z",
+    "endDate": "2022-08-22T03:44:57.000Z"
+  }
+]

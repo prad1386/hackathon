@@ -1,0 +1,61 @@
+@use "./colors" as *;
+@use "./common.scss" as *;
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $border-grey;
+}
+
+.main-container {
+  .left-nav {
+    min-height: calc(100vh - 56px);
+    max-height: 112vh;
+    padding: 20px 0;
+    background-color: $bt-purple;
+    max-width: 250px;
+  }
+
+  .right-container {
+    .btn-primary {
+      background-color: $light-blue;
+      border-color: $light-blue;
+    }
+
+    .page-container {
+      padding: 20px 50px;
+
+      .panel-heading {
+        font-size: $panel-heading-font;
+        margin-bottom: 10px;
+      }
+
+      .sub-heading {
+        font-size: $panel-Subheading-font;
+        margin-bottom: 10px;
+        font-weight: $panel-sugheading-fontweight;
+      }
+
+      .content-layout {
+        border: 1px solid $border-grey;
+        padding: 15px;
+        height: 90vh;
+        overflow: auto;
+      }
+    }
+
+    fieldset {
+      legend {
+        width: unset;
+      }
+    }
+  }
+}

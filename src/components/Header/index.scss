@@ -1,0 +1,6 @@
+@use "../../assets/scss/colors" as *;
+
+.header-color {
+  background-color: $white;
+  border-bottom: 2px solid $bt-purple;
+}

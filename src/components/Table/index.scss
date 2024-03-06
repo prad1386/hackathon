@@ -1,0 +1,40 @@
+@use "../../assets/scss/colors.scss" as *;
+
+.table-container {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid $header-bg-grey;
+    margin-bottom: 10px;
+
+    tr {
+      border-top: 1px solid $header-bg-grey;
+    }
+    td,
+    th {
+      padding: 8px;
+      font-size: 14px;
+    }
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: $header-bg-grey;
+      color: $text-grey;
+    }
+  }
+
+  .pagination-container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .pageSize-select > div {
+    padding: 5px 30px 5px 10px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: $light-blue;
+  }
+}
