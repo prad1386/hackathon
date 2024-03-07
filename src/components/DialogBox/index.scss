@@ -1,0 +1,95 @@
+@use "@assets/scss/colors" as *;
+
+.dialog-box {
+  // This is to fix @mui border issue
+  fieldset {
+    legend {
+      width: unset;
+    }
+  }
+
+  .MuiDialog-paperScrollPaper {
+    overflow-y: unset;
+  }
+
+  .MuiDialogContent-root {
+    padding: 0;
+  }
+
+  .MuiDialogActions-root {
+    margin: 15px;
+  }
+
+  .btn-primary {
+    background-color: $light-blue;
+    border-color: $light-blue;
+    margin-left: 15px;
+    min-height: 38px;
+    &:hover {
+      background-color: $light-blue;
+      border-color: $light-blue;
+    }
+  }
+
+  .MuiTypography-root.MuiDialogTitle-root {
+    background-color: $dialog-header-bg;
+    padding-left: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $dialog-header-text;
+  }
+
+  .alert-secondary {
+    background-color: $header-bg-grey;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    margin: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  .mandatory {
+    color: $red;
+  }
+
+  .asterisk {
+    margin-right: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: -10px;
+  }
+
+  .form {
+    font-size: 14px;
+    padding: 1.5rem;
+
+    label {
+      font-weight: 600;
+    }
+
+    .form-textfield {
+      input,
+      .MuiSelect-select,
+      .MuiFormControlLabel-label {
+        font-size: 14px;
+      }
+    }
+    .form-control-sm {
+      min-height: 40px;
+    }
+
+    .autocomplete {
+      padding: 0;
+      border: none;
+    }
+
+    .disabled-textfield {
+      background-color: $border-grey;
+    }
+  }
+
+  .btn-secondary {
+    background: $white;
+    border: 1px solid $search-btn;
+  }
+}

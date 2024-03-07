@@ -1,5 +1,9 @@
 @use "./colors" as *;
-@use "./common.scss" as *;
+
+$panel-heading-font: 1.5rem;
+$panel-Subheading-font: 1rem;
+$panel-sugheading-fontweight: 500;
+$panel-labelbold: 600;
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -15,27 +19,68 @@
   background-color: $border-grey;
 }
 
+.header-bg-color {
+  background-color: $top-header-color;
+  max-height: 3.5rem;
+  min-height: 3.5rem;
+
+  .navbar-text {
+    font-size: 14px;
+  }
+}
+
+.input-group .btn.btn-search {
+  z-index: 0;
+  max-height: 40px;
+  color: grey;
+}
+
+.main-container.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
 .main-container {
+  padding: 0;
+
+  .sub-container {
+    display: flex;
+  }
+
   .left-nav {
     min-height: calc(100vh - 56px);
     max-height: 112vh;
-    padding: 20px 0;
-    background-color: $bt-purple;
-    max-width: 250px;
+    padding: 0.5rem 0;
+    background-color: $blue;
+    max-width: 240px;
   }
 
   .right-container {
+    width: 100%;
+
+    .release-details {
+      font-size: 12px;
+      text-align: right;
+      padding-right: 1rem;
+      margin-top: -20px;
+    }
+
     .btn-primary {
       background-color: $light-blue;
       border-color: $light-blue;
+      font-size: 13px;
     }
 
     .page-container {
-      padding: 20px 50px;
+      padding: 20px 20px 20px 50px;
 
       .panel-heading {
         font-size: $panel-heading-font;
         margin-bottom: 10px;
+        font-weight: 600;
+        color: $light-blue;
       }
 
       .sub-heading {
@@ -46,16 +91,298 @@
 
       .content-layout {
         border: 1px solid $border-grey;
-        padding: 15px;
-        height: 90vh;
+        padding: 1rem 1.5rem;
+        height: 85vh;
         overflow: auto;
+      }
+
+      .clone-confirmation-msg {
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+
+      .clone-confirmation-radio {
+        display: flex;
       }
     }
 
+    // This is to fix @mui border issue
     fieldset {
       legend {
         width: unset;
       }
     }
+    .search-section {
+      // padding: 0 0 0.75rem 0.75rem;
+      font-size: 14px;
+      // width: 52rem;
+
+      .btn-secondary {
+        background: $white;
+        border: 1px solid $search-btn;
+      }
+
+      // .MuiSvgIcon-root {
+      //   color: $search-btn;
+      // }
+
+      .req-exception-text {
+        margin-left: auto;
+        font-size: 12px;
+      }
+
+      .req-exception-click-here {
+        border: none;
+        background: none;
+        padding: 0;
+        height: 0;
+        margin-left: 5px;
+        color: $light-blue;
+        text-decoration: underline;
+      }
+
+      .search-campaign {
+        border: 1px solid $search-btn;
+        border-radius: 5px;
+        padding: 15px 20px;
+        background: $header-bg-grey;
+        display: flex;
+
+        .col-form-label {
+          width: 200px;
+        }
+      }
+
+      .clear-all-container {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .btn-link-style {
+      font-size: 13px;
+      text-decoration: none;
+      margin-left: 3px;
+    }
+
+    .orange {
+      color: #ca6104;
+    }
+
+    .green {
+      color: #1b971d;
+    }
+
+    .loadingtxt {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .filter-section {
+      margin-bottom: 5px;
+      background: $top-header-color;
+      display: flex;
+      padding: 0.75rem;
+      align-items: center;
+      border-radius: 5px;
+      font-size: 14px;
+      justify-content: space-between;
+
+      .filter-selection-text {
+        color: $green-text;
+        padding: 0 0.5rem;
+      }
+
+      .clear-all-btn {
+        font-size: 10px;
+        padding: 5px;
+        margin-right: 0.5rem;
+      }
+
+      .create-new-btn {
+        margin-left: auto;
+      }
+
+      .create-btn {
+        display: flex;
+        flex-direction: row-reverse;
+
+        a {
+          height: 35px;
+        }
+      }
+    }
+
+    .patch-filter {
+      .patch-filter-select {
+        width: 105px;
+        height: 30px;
+        margin-left: 5px;
+      }
+    }
+
+    .form {
+      font-size: 14px;
+
+      label {
+        font-weight: 600;
+      }
+
+      .alert-secondary {
+        background-color: $header-bg-grey;
+        border: none;
+        border-radius: 0;
+        padding: 0.5rem 1rem;
+        margin-left: -1rem;
+      }
+
+      .btn.asset-upload-btn {
+        z-index: 0;
+      }
+
+      .mandatory {
+        color: $red;
+      }
+
+      .asterisk {
+        margin-right: 3px;
+        font-size: 1rem;
+        margin-left: -10px;
+      }
+
+      .form-textfield {
+        input,
+        .MuiSelect-select,
+        .MuiFormControlLabel-label {
+          font-size: 14px;
+        }
+      }
+
+      .form-control-sm {
+        min-height: 40px;
+      }
+
+      .manual-campaign {
+        padding: 10px 0;
+
+        label {
+          margin-right: 1rem;
+        }
+
+        input {
+          margin-right: 5px;
+        }
+      }
+      .button-sec {
+        margin-top: 2rem;
+      }
+
+      .know-more {
+        border: none;
+        background: none;
+        padding: 0;
+        height: 0;
+        margin-left: 5px;
+        color: $light-blue;
+        text-decoration: underline;
+      }
+    }
+
+    .detail-view {
+      .bd-highlight {
+        .uppercase {
+          text-transform: uppercase;
+        }
+        .d-flex {
+          .camp-label {
+            background-color: $header-bg-grey;
+            font-weight: $panel-labelbold;
+            font-size: 0.8rem;
+            width: 145px;
+
+            & + div {
+              font-size: 0.8rem;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+
+      .camp-label a {
+        text-decoration: none;
+      }
+
+      .asset-log-title {
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .log-row {
+        font-size: 12px;
+        border-bottom: 1px solid $border-grey;
+        margin-top: 0.5rem;
+
+        .log-item {
+          font-weight: 500;
+        }
+
+        .log-time {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+    .Mui-disabled {
+      background-color: #f8f8f8;
+    }
+
+    .MuiBox-root {
+      border: 0px;
+
+      .MuiTabs-root {
+        border-bottom: 4px solid #ee7625;
+        min-height: 43px;
+
+        .MuiTabs-flexContainer {
+          #simple-tab-0 {
+            margin-left: 0px;
+          }
+        }
+
+        .MuiButtonBase-root {
+          background-color: #ebebeb;
+          color: #aaa9b3;
+          margin-left: 18px;
+          border-radius: 10px 10px 0px 0px;
+          font-size: 12px;
+          font-weight: bold;
+          padding: 10px 23px;
+          min-height: 40px;
+        }
+
+        .Mui-selected {
+          background-color: #ee7625;
+          color: #ffffff;
+        }
+
+        .MuiTabs-indicator {
+          background-color: transparent;
+        }
+      }
+    }
   }
+}
+
+.custom-autocomplete {
+  min-width: 18rem !important;
+}
+
+.btn-custom-linkhighlight {
+  text-decoration: none;
+  font-size: 12px;
+}
+
+ul.MuiList-root .action-menuitems {
+  font-size: 14px;
 }

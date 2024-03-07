@@ -1,24 +1,17 @@
 import { useEffect } from "react";
+import Auth from "../Auth";
 import { Navbar, Container } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import { showToast } from "../../utils/tools";
+import { showToast } from "@utils/tools";
 import { useSelector, useDispatch } from "react-redux";
-import { clearNotifications } from "../../store/reducers/notifications";
-import {
-  useMsal,
-  useIsAuthenticated,
-  UnauthenticatedTemplate,
-} from "@azure/msal-react";
+import { clearNotifications } from "@store/notifications.duck";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.scss";
 
 const Header = () => {
-  const { accounts } = useMsal();
-  const isAuthenticated = useIsAuthenticated();
-
-  const userName = accounts[0] && accounts[0].name;
-
   const notifications = useSelector((state) => state.notifications);
+  const {
+    userInfo: { name },
+  } = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,22 +30,23 @@ const Header = () => {
       showToast("SUCCESS", msg);
       dispatch(clearNotifications());
     }
-  }, [notifications]);
+  }, [notifications, dispatch]);
 
   return (
     <>
-      <Navbar collapseOnSelect variant="light" className="header-color">
+      <Auth />
+      <Navbar collapseOnSelect variant="light" className="header-bg-color">
         <Container fluid>
           <Navbar.Brand href="/">
             <img
               alt="brand-logo"
-              src={require("../../assets/images/logo.png")}
-              width={30}
+              src={require("@assets/images/logo.png")}
+              width={140}
               className="d-inline-block align-top"
             />
           </Navbar.Brand>
-          <Navbar.Text>Service Management  &nbsp; &gt; &nbsp; OpsAccelerator</Navbar.Text>
           <Navbar.Collapse id="navbarScroll" className="justify-content-end">
+            <Navbar.Text>Welcome {name}</Navbar.Text>
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -1,4 +1,4 @@
-@use "../../assets/scss/colors.scss" as *;
+@use "@assets/scss/colors.scss" as *;
 
 .navigation {
   font-size: 14px;
@@ -7,6 +7,7 @@
     color: $white;
     font-size: 1rem;
     font-weight: 600;
+    margin: 0 2rem 0.5rem 1rem;
   }
 
   a {
@@ -15,6 +16,13 @@
     padding: 0.75rem 1rem;
     text-decoration: none;
     border-left: 5px solid transparent;
+    display: flex;
+    align-items: center;
+    min-height: 3.25rem;
+
+    span {
+      margin-left: 0.25rem;
+    }
 
     & > svg {
       margin-right: 5px;
@@ -33,11 +41,13 @@
 
   .divider {
     height: 3px;
-    background-color: #fff;
+    background-color: $white;
     margin: 20px 30px;
   }
 
   .admin-sub-navlinks {
-    margin-left: 25%;
+    a {
+      padding-left: 20%;
+    }
   }
 }
